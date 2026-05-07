@@ -1,0 +1,54 @@
+{
+  "name": "Chef AI Assistant",
+  "version": "1.0",
+  "description": "نظام شيف ذكي أوفلاين لفهم طلبات الطعام وتحويلها لوصفات باستخدام الكلمات المفتاحية والـ ID",
+  "size_kb": 80,
+
+  "vocabulary": {
+    "pasta": ["مكرونة", "اسباجيتي", "قلم", "لازانيا", "pasta", "spaghetti"],
+    "cheese": ["جبنة", "موزاريلا", "شيدر", "cheddar", "cheese", "جبنة مبشورة"],
+    "sauce": ["صلصة", "بشاميل", "tomato", "sauce", "صوص", "كريمة"],
+    "protein": ["فراخ", "دجاج", "لحم", "سمك", "meat", "chicken", "fish"],
+    "rice": ["أرز", "rice", "رز"],
+    "fast": ["سريع", "سهل", "10 دقيقة", "20 دقيقة", "سندوتش"],
+    "cheap": ["رخيص", "بسيط", "اقتصادي"],
+    "fancy": ["راقي", "مميز", "احترافي"],
+    "dessert": ["حلويات", "كيك", "كنافة", "بسبوسة", "pudding"]
+  },
+
+  "recipe_map": [
+    { "id": 1, "tags": ["pasta", "sauce"] },
+    { "id": 2, "tags": ["pasta", "cheese"] },
+    { "id": 3, "tags": ["protein"] },
+    { "id": 4, "tags": ["protein", "sauce"] },
+    { "id": 5, "tags": ["dessert"] },
+    { "id": 6, "tags": ["pasta"] },
+    { "id": 7, "tags": ["rice"] },
+    { "id": 8, "tags": ["fast"] },
+    { "id": 9, "tags": ["cheap"] },
+    { "id": 10, "tags": ["fancy"] },
+    { "id": 11, "tags": ["protein", "fast"] },
+    { "id": 12, "tags": ["pasta", "protein"] },
+    { "id": 13, "tags": ["pasta", "cheese", "sauce"] },
+    { "id": 14, "tags": ["rice", "protein"] },
+    { "id": 15, "tags": ["rice", "sauce"] },
+    { "id": 16, "tags": ["fast", "cheap"] },
+    { "id": 17, "tags": ["dessert", "fancy"] },
+    { "id": 18, "tags": ["protein", "fancy"] },
+    { "id": 19, "tags": ["pasta", "fast"] },
+    { "id": 20, "tags": ["cheese", "fast"] }
+  ],
+
+  "rules": {
+    "min_score": 1,
+    "max_results": 5,
+    "fallback": "إذا لم يتم العثور على نتائج، اقترح أقرب وصفات حسب المكونات العامة"
+  },
+
+  "system": {
+    "mode": "offline",
+    "priority": "tags_first",
+    "secondary": "keyword_match",
+    "enable_learning": false
+  }
+}
